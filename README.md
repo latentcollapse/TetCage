@@ -92,3 +92,9 @@ reports keep that wording and those paths as they were written. The work was
 done under a written spiral method ([`docs/rpd-sop.md`](docs/rpd-sop.md)): pre-registered predictions and
 falsification conditions, pinned evidence, and a failure register that
 records amendments rather than hiding them.
+
+## License
+
+MIT; see [LICENSE](LICENSE). `vendor/lava/` is Lava by Simon Danisch and
+contributors, under its own MIT license ([vendor/lava/LICENSE](vendor/lava/LICENSE)).
+The paper is AMD's and is not part of this repository.
