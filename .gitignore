@@ -1,0 +1,10 @@
+# The primary source is AMD's paper: fetched by tools/fetch-paper.sh, never committed.
+/references/*.pdf
+/references/paper.txt
+
+# Run logs (results/*.csv are the pinned evidence; logs are local)
+*.log
+
+# Julia
+*.jl.cov
+*.jl.mem
