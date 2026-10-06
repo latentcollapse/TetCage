@@ -10,7 +10,7 @@
 #   julia --project=portable portable/compile_amd.jl            # all targets
 #   julia --project=portable portable/compile_amd.jl gfx942     # one target
 #
-# Writes results/portable-amd-compile.csv.
+# Writes results/portable-amd-compile.csv (a filtered run: ...-compile-<targets>.csv).
 using AMDGPU, KernelAbstractions, GPUCompiler, LLVM, Printf
 const KA = KernelAbstractions
 
@@ -92,7 +92,9 @@ function main(selected)
                               join(unres, ";"), replace(status, ',' => ';')), ","))
         end
     end
-    out = joinpath(ROOT, "results", "portable-amd-compile.csv")
+    # a filtered run gets its own file, so it cannot overwrite the full evidence CSV
+    suffix = isempty(selected) ? "" : "-" * join(selected, "-")
+    out = joinpath(ROOT, "results", "portable-amd-compile$suffix.csv")
     write(out, join(rows, "\n") * "\n")
     println("\nwrote $out")
     println(failures == 0 ? "ALL CASES BUILT CLEAN" : "$failures case(s) not clean")
