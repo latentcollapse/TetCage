@@ -1,0 +1,46 @@
+target,case,code_object_bytes,vgpr,sgpr,vgpr_spill,sgpr_spill,scratch_bytes,unresolved,status
+gfx942,deform_corners fam=1,28184,27,52,0,0,0,,ok
+gfx942,deform_corners fam=2,28184,27,52,0,0,0,,ok
+gfx942,deform_corners fam=3,28184,27,52,0,0,0,,ok
+gfx942,reconstruct,33280,34,98,0,0,0,,ok
+gfx942,pair_dev,19360,14,52,0,0,0,,ok
+gfx942,fused_deform_reconstruct fam=1,51584,56,98,0,0,0,,ok
+gfx942,fused_deform_reconstruct fam=2,51584,56,98,0,0,0,,ok
+gfx942,fused_deform_reconstruct fam=3,51584,56,98,0,0,0,,ok
+gfx942,fused_batched_wind,42112,50,102,0,0,0,,ok
+gfx942,reconstruct_batched,36544,27,106,0,16,0,,ok (sgpr spill to vgpr lanes)
+gfx942,rot_direct,17728,10,44,0,0,0,,ok
+gfx942,lbs,27472,30,96,0,0,0,,ok
+gfx942,morph_lerp,20408,12,56,0,0,0,,ok
+gfx942,fused_batched_shared,36664,36,102,0,0,0,,ok
+gfx942,probe_div,15544,14,34,0,0,0,,ok
+gfx90a,deform_corners fam=1,28640,29,58,0,0,0,,ok
+gfx90a,deform_corners fam=2,28640,29,58,0,0,0,,ok
+gfx90a,deform_corners fam=3,28640,29,58,0,0,0,,ok
+gfx90a,reconstruct,34064,34,102,0,0,0,,ok
+gfx90a,pair_dev,19824,14,58,0,0,0,,ok
+gfx90a,fused_deform_reconstruct fam=1,52656,56,102,0,0,0,,ok
+gfx90a,fused_deform_reconstruct fam=2,52656,56,102,0,0,0,,ok
+gfx90a,fused_deform_reconstruct fam=3,52656,56,102,0,0,0,,ok
+gfx90a,fused_batched_wind,42416,50,106,0,0,0,,ok
+gfx90a,reconstruct_batched,37856,35,106,0,34,0,,ok (sgpr spill to vgpr lanes)
+gfx90a,rot_direct,17952,12,50,0,0,0,,ok
+gfx90a,lbs,28008,30,102,0,0,0,,ok
+gfx90a,morph_lerp,20968,14,62,0,0,0,,ok
+gfx90a,fused_batched_shared,37240,34,106,0,0,0,,ok
+gfx90a,probe_div,15728,14,38,0,0,0,,ok
+gfx1100,deform_corners fam=1,27840,33,32,0,0,0,,ok
+gfx1100,deform_corners fam=2,27840,33,32,0,0,0,,ok
+gfx1100,deform_corners fam=3,27840,33,32,0,0,0,,ok
+gfx1100,reconstruct,32896,31,54,0,0,0,,ok
+gfx1100,pair_dev,18376,12,30,0,0,0,,ok
+gfx1100,fused_deform_reconstruct fam=1,56024,62,54,0,0,0,,ok
+gfx1100,fused_deform_reconstruct fam=2,56024,62,54,0,0,0,,ok
+gfx1100,fused_deform_reconstruct fam=3,56024,62,54,0,0,0,,ok
+gfx1100,fused_batched_wind,44600,53,56,0,0,0,,ok
+gfx1100,reconstruct_batched,36104,31,62,0,0,0,,ok
+gfx1100,rot_direct,16360,12,26,0,0,0,,ok
+gfx1100,lbs,27320,26,55,0,0,0,,ok
+gfx1100,morph_lerp,19392,16,34,0,0,0,,ok
+gfx1100,fused_batched_shared,36400,30,56,0,0,0,,ok
+gfx1100,probe_div,14648,14,26,0,0,0,,ok

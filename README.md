@@ -23,6 +23,13 @@ is pinned in the doc that reports it. Deterministic columns reproduce
 byte-identically across fresh processes; wall-time columns are machine state,
 and the reports say where their ordering is not stable between runs.
 
+The compute study also runs on AMD GPUs. `portable/` holds vendor-neutral
+ports of every CUDA kernel and driver (KernelAbstractions; ROCm through
+AMDGPU.jl). On the RTX 5060 they are bit-identical to the CUDA originals and
+reproduce every recorded deterministic row. Every kernel also builds clean,
+offline, for MI300X (gfx942), MI250X (gfx90a) and RDNA3 (gfx1100). Runs on AMD
+hardware are pending; see [AMD portability](docs/tetcage-amd-portability.md).
+
 ## Results
 
 | Finding | Number | Evidence |
@@ -48,6 +55,7 @@ every defect found on the way, including the ones that were ours.
 | `oracle/` | CPU reference: cage build (`TetCage.jl`), barycentric basis, deformation fields, mesh IO, and the Spiral C–D drivers |
 | `gpu/` | CUDA.jl kernels and the Spiral E, F, H, I drivers (the numeric oracle and economics lab) |
 | `vk/` | Vulkan.jl render-pass readback (Spiral G) and the Vulkan compute parity port (P0) |
+| `portable/` | The `gpu/` kernels and drivers, vendor-neutral: one source for AMD (ROCm), NVIDIA and CPU, with parity, offline AMD build and smoke-test tooling |
 | `corpus/` | The 10 test meshes and their manifest |
 | `results/` | Pinned evidence CSVs |
 | `logs/` | Run CSVs kept as evidence (raw `.log` files stay local) |
@@ -64,7 +72,9 @@ every defect found on the way, including the ones that were ours.
   standard library and rewrites `results/weight-model-sweep.csv`
   byte-identically.
 - `oracle/` drivers run on the CPU. `gpu/` needs an NVIDIA GPU with CUDA.jl
-  (`gpu/Project.toml`, `gpu/Manifest.toml`). `vk/` needs a Vulkan device
+  (`gpu/Project.toml`, `gpu/Manifest.toml`). `portable/` runs the same work on
+  an AMD GPU with ROCm, an NVIDIA GPU or the CPU; its
+  [README](portable/README.md) is the runbook. `vk/` needs a Vulkan device
   (`vk/Project.toml` pins Vulkan.jl and VulkanCore.jl to exact upstream
   commits).
 - Each report names its driver script, the CSV it writes, and that CSV's hash.
