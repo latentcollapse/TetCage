@@ -105,6 +105,7 @@ records amendments rather than hiding them.
 
 ## License
 
-MIT; see [LICENSE](LICENSE). `vendor/lava/` is Lava by Simon Danisch and
-contributors, under its own MIT license ([vendor/lava/LICENSE](vendor/lava/LICENSE)).
-The paper is AMD's and is not part of this repository.
+Apache License 2.0; see [LICENSE](LICENSE). `vendor/lava/` is Lava by Simon
+Danisch and contributors, under its own MIT license
+([vendor/lava/LICENSE](vendor/lava/LICENSE)). The paper is AMD's and is not
+part of this repository.
